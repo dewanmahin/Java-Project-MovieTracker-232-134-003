@@ -16,7 +16,7 @@ public class FavoriteMoviesTracker  {
             System.out.println("4. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
-            scanner.nextLine(); // Consume newline left-over
+            scanner.nextLine(); // if there is any extra line left
 
             switch (option) {
                 case 1:
@@ -37,6 +37,7 @@ public class FavoriteMoviesTracker  {
         }
     }
 
+    // Add Movie
     private static void addMovie() {
         System.out.print("Enter movie title: ");
         String movieTitle = scanner.nextLine();
@@ -44,6 +45,7 @@ public class FavoriteMoviesTracker  {
         System.out.println("Movie added successfully!");
     }
 
+    // Remove Movie
     private static void removeMovie() {
         if (favoriteMovies.isEmpty()) {
             System.out.println("No movies to remove.");
@@ -56,7 +58,7 @@ public class FavoriteMoviesTracker  {
         }
         System.out.print("Enter movie number: ");
         int movieNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline left-over
+        scanner.nextLine(); // if there is any extra line left
 
         if (0 < movieNumber && movieNumber <= favoriteMovies.size()) {
             favoriteMovies.remove(movieNumber - 1);
@@ -66,6 +68,7 @@ public class FavoriteMoviesTracker  {
         }
     }
 
+    // Display Movie List
     private static void displayMovies() {
         if (favoriteMovies.isEmpty()) {
             System.out.println("No favorite movies.");
